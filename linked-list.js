@@ -55,6 +55,23 @@ class LinkedList {
 			return current;
 		}
 	}
+
+	at(index) {
+		if (index < 0) {
+			return `index out of range`;
+		}
+
+		let counter = 0;
+		let current = this.head;
+		while (current) {
+			if (counter === index) {
+				return current;
+			}
+			current = current.next;
+			counter++;
+		}
+		return "index out of range";
+	}
 }
 
 class Node {
@@ -74,4 +91,4 @@ list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
 
-console.log(list.tail());
+console.log(list.at(6));
