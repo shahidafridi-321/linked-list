@@ -43,6 +43,18 @@ class LinkedList {
 	headNode() {
 		return this.head;
 	}
+
+	tail() {
+		if (!this.head) {
+			return this.head;
+		} else {
+			let current = this.head;
+			while (current.next) {
+				current = current.next;
+			}
+			return current;
+		}
+	}
 }
 
 class Node {
@@ -62,4 +74,4 @@ list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
 
-console.log(list.headNode());
+console.log(list.tail());
