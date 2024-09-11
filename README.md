@@ -49,7 +49,7 @@ The `LinkedList` class manages a collection of `Node` objects, allowing various 
 
 1. **Installation**: Clone the repository and navigate to the project directory.
    ```bash
-   git clone https://github.com/your-username/LinkedList
+   git clone https://github.com/shahidafridi-321/LinkedList
    cd LinkedList
    ```
 
