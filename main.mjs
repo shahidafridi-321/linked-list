@@ -9,8 +9,11 @@ list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
 
+console.log(list.toString()); // ( hourse ) -> ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null
+
+list.pop();
+console.log(list.toString()); // ( hourse ) -> ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> null
+
 /* console.log(list.find("turtle")); */
 
 /* let value = list.pop(); */
-
-console.log(list.toString()); // ( hourse ) -> ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null
