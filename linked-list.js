@@ -1,4 +1,6 @@
-class LinkedList {}
+class LinkedList {
+  
+}
 
 class Node {
 	constructor() {
