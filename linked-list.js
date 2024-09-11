@@ -14,6 +14,17 @@ class LinkedList {
 			current.next = newNode;
 		}
 	}
+
+	prepend(value) {
+		let newNode = new Node(value);
+		if (!this.head) {
+			this.head = newNode;
+		} else {
+			let nextNode = this.head;
+			this.head = newNode;
+			newNode.next = nextNode;
+		}
+	}
 }
 
 class Node {
@@ -32,6 +43,8 @@ list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
+list.prepend("hourse");
+console.log(list);
 
 /* function findperson(list, name) {
 	if (!list.next) {
