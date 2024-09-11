@@ -49,8 +49,8 @@ The `LinkedList` class manages a collection of `Node` objects, allowing various 
 
 1. **Installation**: Clone the repository and navigate to the project directory.
    ```bash
-   git clone https://github.com/shahidafridi-321/LinkedList
-   cd LinkedList
+   git clone git@github.com:shahidafridi-321/linked-list.git
+   cd linked-list
    ```
 
 2. **Import the Classes**: In your JavaScript file, import the `LinkedList` and `Node` classes.
