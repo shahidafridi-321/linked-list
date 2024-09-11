@@ -39,6 +39,10 @@ class LinkedList {
 		}
 		return size;
 	}
+
+	headNode() {
+		return this.head;
+	}
 }
 
 class Node {
@@ -58,4 +62,4 @@ list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
 
-console.log(list.size());
+console.log(list.headNode());
