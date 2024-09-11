@@ -94,6 +94,36 @@ class LinkedList {
 			current = current.next;
 		}
 	}
+
+	contains(value) {
+		if (!this.head) {
+			return false;
+		}
+		let current = this.head;
+		while (current.next) {
+			if (current.value === value) {
+				return true;
+			}
+			current = current.next;
+		}
+		if (!current.next && current.value === value) {
+			return true;
+		}
+		if (!current.next && current.value !== value) {
+			return false;
+		}
+	}
+
+	find(value) {
+		if (!this.head) {
+			return null;
+		}
+		let current = this.head;
+		let index = 0;
+		while(current){
+			
+		}
+	}
 }
 
 class Node {
@@ -112,9 +142,9 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
+
+console.log(list.contains("turtle"));
+
 let value = list.pop();
 
-console.log(list);
-console.log(value);
-
-console.log(list.size());
+console.log(list.contains("turtle"));
