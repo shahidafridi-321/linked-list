@@ -8,7 +8,7 @@ class LinkedList {
 			this.head = newNode;
 		} else {
 			let current = this.head;
-			if (current.next) {
+			while (current.next) {
 				current = current.next;
 			}
 			current.next = newNode;
@@ -25,6 +25,20 @@ class LinkedList {
 			newNode.next = nextNode;
 		}
 	}
+
+	size() {
+		let size = 0;
+		if (!this.head) {
+			return size;
+		} else {
+			let current = this.head;
+			while (current) {
+				current = current.next;
+				size++;
+			}
+		}
+		return size;
+	}
 }
 
 class Node {
@@ -35,7 +49,6 @@ class Node {
 }
 
 const list = new LinkedList();
-/* console.log(list); */
 
 list.append("dog");
 list.append("cat");
@@ -44,18 +57,5 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
-console.log(list);
 
-/* function findperson(list, name) {
-	if (!list.next) {
-		return -1;
-	}
-	if (list.value == name) {
-		return name;
-	}
-
-	return findperson(list.next, name);
-}
-
-console.log(findperson(list.head, "cat"));
- */
+console.log(list.size());
