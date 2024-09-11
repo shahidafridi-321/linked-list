@@ -1,5 +1,7 @@
+import { Node } from "./node.mjs";
+
 // linked list manager class resposible for different operation on the list
-class LinkedList {
+export class LinkedList {
 	constructor() {
 		// initializd head as null
 		this.head = null;
@@ -167,25 +169,3 @@ class LinkedList {
 	}
 }
 
-class Node {
-	constructor(value = null, next = null) {
-		this.value = value;
-		this.next = null;
-	}
-}
-
-const list = new LinkedList();
-
-list.append("dog");
-list.append("cat");
-list.append("parrot");
-list.append("hamster");
-list.append("snake");
-list.append("turtle");
-list.prepend("hourse");
-
-console.log(list.find("turtle"));
-
-/* let value = list.pop(); */
-
-console.log(list.toString());
