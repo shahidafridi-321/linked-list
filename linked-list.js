@@ -72,6 +72,28 @@ class LinkedList {
 		}
 		return "index out of range";
 	}
+
+	pop() {
+		if (!this.head) {
+			return this.head;
+		}
+
+		let current = this.head;
+		if (!current.next) {
+			let poppedValue = current.value;
+			this.head = null;
+			return poppedValue;
+		}
+
+		while (current.next) {
+			if (!current.next.next) {
+				let poppedValue = current.next.value;
+				current.next = null;
+				return poppedValue;
+			}
+			current = current.next;
+		}
+	}
 }
 
 class Node {
@@ -90,5 +112,9 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
+let value = list.pop();
 
-console.log(list.at(6));
+console.log(list);
+console.log(value);
+
+console.log(list.size());
