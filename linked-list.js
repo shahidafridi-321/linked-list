@@ -120,9 +120,14 @@ class LinkedList {
 		}
 		let current = this.head;
 		let index = 0;
-		while(current){
-			
+		while (current) {
+			if (current.value === value) {
+				return index;
+			}
+			index++;
+			current = current.next;
 		}
+		return null;
 	}
 }
 
@@ -143,8 +148,8 @@ list.append("snake");
 list.append("turtle");
 list.prepend("hourse");
 
-console.log(list.contains("turtle"));
+console.log(list.find("turtle"));
 
 let value = list.pop();
 
-console.log(list.contains("turtle"));
+console.log(list.find("turtle"));
