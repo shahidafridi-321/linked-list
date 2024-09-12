@@ -196,6 +196,7 @@ export class LinkedList {
 		return `inserted at index ${counter}`;
 	}
 
+	// removes the node at the given index
 	removeAt(index) {
 		if (!this.head) {
 			return "node element to remove";
