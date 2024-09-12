@@ -120,17 +120,17 @@ export class LinkedList {
 			// Return false if the list is empty
 			return false;
 		}
-		let current = this.head;
-		while (current.next) {
-			if (current.value === value) {
+		let currentNode = this.head;
+		while (currentNode.next) {
+			if (currentNode.value === value) {
 				return true;
 			}
-			current = current.next;
+			currentNode = currentNode.next;
 		}
-		if (!current.next && current.value === value) {
+		if (!currentNode.next && currentNode.value === value) {
 			return true;
 		}
-		if (!current.next && current.value !== value) {
+		if (!currentNode.next && currentNode.value !== value) {
 			return false;
 		}
 	}
@@ -140,14 +140,14 @@ export class LinkedList {
 		if (!this.head) {
 			return null; // Return null if the list is empty
 		}
-		let current = this.head;
+		let currentNode = this.head;
 		let index = 0;
-		while (current) {
-			if (current.value === value) {
+		while (currentNode) {
+			if (currentNode.value === value) {
 				return index;
 			}
 			index++;
-			current = current.next;
+			currentNode = currentNode.next;
 		}
 		return null;
 	}
@@ -157,17 +157,18 @@ export class LinkedList {
 			// Return null if the list is empty
 			return null;
 		}
-		let current = this.head;
+		let currentNode = this.head;
 		let string = "";
-		while (current) {
+		while (currentNode) {
 			// traverse the list
-			string += `( ${current.value} ) -> `; // add the current value to the string
-			current = current.next;
+			string += `( ${currentNode.value} ) -> `; // add the current value to the string
+			currentNode = currentNode.next;
 		}
 		string += "null";
 		return string; // returns the final template string
 	}
 
+	// Inserts a new node with the provided value at the given index
 	insertAt(value, index) {
 		if (index < 0) {
 			return "index out of range";
@@ -180,18 +181,42 @@ export class LinkedList {
 		}
 
 		let counter = 0;
-		let current = this.head;
+		let currentNode = this.head;
 
-		while (current && counter < index - 1) {
-			current = current.next;
+		while (currentNode && counter < index - 1) {
+			currentNode = currentNode.next;
 			counter++;
 		}
-		if (!current) {
+		if (!currentNode) {
 			return "index out of range";
 		}
-		let nextNode = current.next;
-		current.next = newNode;
+		let nextNode = currentNode.next;
+		currentNode.next = newNode;
 		newNode.next = nextNode;
-		return `inserted at index ${counter}`
+		return `inserted at index ${counter}`;
+	}
+
+	removeAt(index) {
+		if (!this.head) {
+			return "node element to remove";
+		}
+		if (index < 0) {
+			return "index out of range";
+		}
+		if (index === 0) {
+			this.head = this.head.next;
+			return `Removed item at index ${index}`;
+		}
+		let counter = 0;
+		let currentNode = this.head;
+		while (currentNode && counter < index - 1) {
+			currentNode = currentNode.next;
+			counter++;
+		}
+		if (!currentNode || !currentNode.next.next) {
+			return "index out of range";
+		}
+		currentNode.next = currentNode.next.next;
+		return `Removed item at index ${index}`;
 	}
 }
