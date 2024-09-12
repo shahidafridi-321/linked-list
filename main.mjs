@@ -17,3 +17,7 @@ console.log(list.toString()); // ( hourse ) -> ( dog ) -> ( cat ) -> ( parrot ) 
 /* console.log(list.find("turtle")); */
 
 /* let value = list.pop(); */
+
+console.log(list.insertAt("shahid", 5));
+
+console.log(list.toString());

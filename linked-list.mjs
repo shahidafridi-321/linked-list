@@ -167,5 +167,31 @@ export class LinkedList {
 		string += "null";
 		return string; // returns the final template string
 	}
-}
 
+	insertAt(value, index) {
+		if (index < 0) {
+			return "index out of range";
+		}
+		let newNode = new Node(value);
+		if (index === 0) {
+			newNode.next = this.head;
+			this.head = newNode;
+			return;
+		}
+
+		let counter = 0;
+		let current = this.head;
+
+		while (current && counter < index - 1) {
+			current = current.next;
+			counter++;
+		}
+		if (!current) {
+			return "index out of range";
+		}
+		let nextNode = current.next;
+		current.next = newNode;
+		newNode.next = nextNode;
+		return `inserted at index ${counter}`
+	}
+}
